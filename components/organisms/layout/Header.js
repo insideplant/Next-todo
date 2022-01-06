@@ -1,4 +1,5 @@
 import { Flex, Heading, Text } from "@chakra-ui/layout";
+import Link from "next/link";
 
 export const Header = () => {
   return (
@@ -11,7 +12,9 @@ export const Header = () => {
       padding={{base: "3", md:"5"}}
     >
       <Heading as="h1" fontSize={{ base: "md", md: "xl"}}>
-        TODO
+        <Link href="/">
+          TODO
+        </Link>
       </Heading>
     </Flex>
   )
