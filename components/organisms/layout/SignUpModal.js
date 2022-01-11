@@ -16,14 +16,15 @@ import {
 } from "@chakra-ui/react";
 import { useAuth } from "../../hooks/useAuth";
 
-export const SignInModal = () => {
+export const SignUpModal = () => {
   const { isOpen, onOpen, onClose } = useDisclosure();
   const [show, setShow] = useState(false);
   const handleClick = () => setShow(!show);
-  const { signin } = useAuth();
-  const [signInPassword, setSignInPassword] = useState("");
-  const [signInEmail, setSignInEmail] = useState("");
-  const onClickSignin = () => signin(signInPassword, signInEmail);
+  const { signup } = useAuth();
+  const [signUpPassword, setSignUpPassword] = useState("");
+  const [signUpEmail, setSignUpEmail] = useState("");
+  const onClickSignup = () => signup(signUpPassword, signUpEmail);
+  console.log(signUpPassword, signUpEmail);
 
   return (
     <>
@@ -39,9 +40,9 @@ export const SignInModal = () => {
               <Input
                 placeholder="Enter Email"
                 name="email"
-                value={signInEmail}
+                value={signUpEmail}
                 onChange={(e) => {
-                  setSignInEmail(e.target.value);
+                  setSignUpEmail(e.target.value);
                 }}
               />
               <InputGroup>
@@ -49,9 +50,9 @@ export const SignInModal = () => {
                   placeholder="Enter password"
                   type={show ? "text" : "password"}
                   name="password"
-                  value={signInPassword}
+                  value={signUpPassword}
                   onChange={(e) => {
-                    setSignInPassword(e.target.value);
+                    setSignUpPassword(e.target.value);
                   }}
                 />
                 <InputRightElement width="4.5rem">
@@ -67,7 +68,7 @@ export const SignInModal = () => {
               variant="ghost"
               colorScheme="blue"
               bg="orange.300"
-              onClick={onClickSignin}
+              onClick={onClickSignup}
             >
               Create
             </Button>

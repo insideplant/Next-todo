@@ -19,11 +19,11 @@ export const useAuth = () => {
       });
   };
 
-  const signin = (email, password) => {
-    console.log(password);
-    console.log(email);
-    createUserWithEmailAndPassword(auth, email, password)
-      .then((userCredential) => {
+  const signup = (signInEmail, signInPassword) => {
+    console.log(signInPassword);
+    console.log(signInEmail);
+    createUserWithEmailAndPassword(auth, signInEmail, signInPassword)
+      .then(() => {
         router.push("/");
       })
       .catch((error) => {
@@ -41,5 +41,5 @@ export const useAuth = () => {
       });
   };
 
-  return { login, signin, logout };
+  return { login, signup, logout };
 };

@@ -9,7 +9,7 @@ import {
   Stack,
   Text,
 } from "@chakra-ui/react";
-import { SignInModal } from "../components/organisms/layout/SignInModal";
+import { SignUpModal } from "../components/organisms/layout/SignUpModal";
 import { useAuth } from "../components/hooks/useAuth";
 
 export default function login() {
@@ -25,7 +25,7 @@ export default function login() {
       <Flex align="center" justify="center" height="100vh">
         <Box py={5} px={10} w="md">
           <Text fontSize="4xl">
-            Todoを使うと、友達や同僚、同級生、仲間たちとつながりを深められます。
+            Todoを使うと、友達や同僚、同級生、仲間たちとタスクを管理出来ます。
             ケータイ、スマートフォンからもアクセスできます。
           </Text>
         </Box>
@@ -58,7 +58,7 @@ export default function login() {
             <hr />
 
             <Button onClick={onClickLogin}>Login</Button>
-            <SignInModal />
+            <SignUpModal />
           </Stack>
         </Box>
       </Flex>
