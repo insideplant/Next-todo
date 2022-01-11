@@ -23,7 +23,7 @@ export const SignUpModal = () => {
   const { signup } = useAuth();
   const [signUpPassword, setSignUpPassword] = useState("");
   const [signUpEmail, setSignUpEmail] = useState("");
-  const onClickSignup = () => signup(signUpPassword, signUpEmail);
+  const onClickSignup = () => signup(signUpEmail,signUpPassword);
   console.log(signUpPassword, signUpEmail);
 
   return (
