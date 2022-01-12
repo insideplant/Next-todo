@@ -11,8 +11,9 @@ export const useAuth = () => {
 
   const login = (email, password) => {
     signInWithEmailAndPassword(auth, email, password)
-      .then(() => {
-        router.push("/");
+      .then((userCredential) => {
+        const user = userCredential.user.uid;
+        router.push(`/users/${user}`);
       })
       .catch((error) => {
         alert(error.message);
@@ -24,7 +25,7 @@ export const useAuth = () => {
     console.log(signInEmail);
     createUserWithEmailAndPassword(auth, signInEmail, signInPassword)
       .then(() => {
-        router.push("/");
+        router.push(`/users/${user}`);
       })
       .catch((error) => {
         alert(error.message);

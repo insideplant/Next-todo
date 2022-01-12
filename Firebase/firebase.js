@@ -13,8 +13,7 @@ const firebaseApp =  initializeApp({
   appId: process.env.NEXT_PUBLIC_FIREBASE_APP_ID,
 });
 
-console.log(firebaseApp)
 // Initialize Firebase
 
-export const auth = getAuth(firebaseApp);
+export const auth = getAuth();
 export const db = getFirestore(firebaseApp);
